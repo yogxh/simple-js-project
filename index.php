@@ -11,6 +11,7 @@
 	<section id="question"></section>
 	<section id="feedback"></section>
 	<p>Score:<strong id="score">0</strong></p>
+	<button id="button">Click To Play Quiz Ninja!</button>
 <script src="js/script.js"></script>
 </body>
 </html>

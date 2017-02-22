@@ -1,6 +1,6 @@
 /* identify different element and store value in variable */
-var $question=document.getElementById("question");
-var $feedback= document.getElementById("feedback");
+var $question = document.getElementById("question");
+var $feedback = document.getElementById("feedback");
 var $score = document.getElementById("score");
 
 /* The following function helps to update the question,answer,and score as well */
@@ -34,7 +34,7 @@ quiz = {
 var score = 0;
 
 for(var i=0, question, answer, max=quiz.questions.length; i<max;i++) {
-	question = quiz.questions[i]; // change is made here
+	question = quiz.questions[i].question; // change is made here
 	ask(question);
 	check(answer);
 }
@@ -42,7 +42,7 @@ gameOver();
 
 /* function to ask question */
 function ask(question) {
-	update($question,quiz.question + question);
+	update($question,quiz.question+question);
 	return prompt("Enter your answer");
 }
 
