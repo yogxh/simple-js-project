@@ -5,13 +5,13 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<header>
+	<header id="head">
 		<h1>Quiz Ninja!</h1>
+		<p>Score:<strong id="score">0</strong></p>
 	</header>
 	<section id="question"></section>
 	<section id="feedback"></section>
-	<p>Score:<strong id="score">0</strong></p>
-	<button id="button">Click To Play Quiz Ninja!</button>
+	<button id="start">Click To Play Quiz Ninja!</button>
 <script src="js/script.js"></script>
 </body>
 </html>

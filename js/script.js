@@ -1,7 +1,13 @@
+
 /* identify different element and store value in variable */
 var $question = document.getElementById("question");
 var $feedback = document.getElementById("feedback");
 var $score = document.getElementById("score");
+var $start = document.getElementById("start");
+
+var score = 0;
+
+update($score,score);
 
 /* The following function helps to update the question,answer,and score as well */
 function update(element,content,klass){
@@ -11,11 +17,6 @@ function update(element,content,klass){
 	if(klass){
 		p.className=klass;
 	}
-}
-
-/* Updates the initial score and hroughout the game play */
-function play(){
-	update($score,score);
 }
 
 /* this is an object containing information for the game  */
@@ -30,25 +31,34 @@ quiz = {
 	]
 }
 
-/* loop used to change question and score */
-var score = 0;
+$start.addEventListener('click',function(){ play(quiz) },false);
+
+
+
+/* Updates the initial score and hroughout the game play */
+function play(quiz){
+	ask();
+	check();
+	gameOver();
+}
+
 
 for(var i=0, question, answer, max=quiz.questions.length; i<max;i++) {
+
 	question = quiz.questions[i].question; // change is made here
 	ask(question);
 	check(answer);
 }
-gameOver();
 
 /* function to ask question */
 function ask(question) {
 	update($question,quiz.question+question);
-	return prompt("Enter your answer");
+	answer=prompt("Enter your answer");
 }
 
 /* function to check answer and update score */
 function check(answer) {
-	if(answer === quiz.questions[i].answer){ // quiz[i][1] is the ith answer	
+		if(answer === quiz.questions[i].answer){ // quiz[i][1] is the ith answer	
 		update($feedback,"Correct!","right");
 		// increase score by 1
 		score++;
